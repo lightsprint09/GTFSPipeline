@@ -29,6 +29,16 @@ public struct StepResult: Codable {
 }
 
 public func write(_ result: StepResult, to url: URL) {
+    let stepDirectory = url.appendingPathComponent("\(stepName)")
+    let fileManager = FileManager.default
+    if !.fileExists(atPath: dataPath.stepDirectory) {
+        do {
+            try fileManager.createDirectory(atPath: stepDirectory.absoluteString, withIntermediateDirectories: true, attributes: nil)
+        } catch {
+            print(error.localizedDescription);
+        }
+    }
+    
     write(url: url, stepName: result.stepName, fileName: "Routes", content: result.gtfs.routes)
     write(url: url, stepName: result.stepName, fileName: "Trips", content: result.gtfs.trips)
     write(url: url, stepName: result.stepName, fileName: "Stops", content: result.gtfs.stops)
