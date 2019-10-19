@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "GTFS",
+        "repositoryURL": "https://github.com/lightsprint09/GTFS",
+        "state": {
+          "branch": "master",
+          "revision": "c0525e3a1fbc2eab84d90951da72c13aba7d7eb2",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
