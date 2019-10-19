@@ -29,14 +29,12 @@ public struct StepResult: Codable {
 }
 
 public func write(_ result: StepResult, to url: URL) {
-    let stepDirectory = url.absoluteString + "/\(result.stepName)"
-    let fileManager = FileManager.default
-    if !fileManager.fileExists(atPath: stepDirectory) {
-        do {
-            try fileManager.createDirectory(atPath: stepDirectory, withIntermediateDirectories: true, attributes: nil)
-        } catch {
-            print(error.localizedDescription);
-        }
+    let dataPath = url.appendingPathComponent(result.stepName)
+
+    do {
+        try FileManager.default.createDirectory(atPath: dataPath.path, withIntermediateDirectories: true, attributes: nil)
+    } catch let error as NSError {
+        print("Error creating directory: \(error.localizedDescription)")
     }
     
     write(url: url, stepName: result.stepName, fileName: "Routes", content: result.gtfs.routes)
