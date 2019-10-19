@@ -33,6 +33,8 @@ public func write(_ result: StepResult, to url: URL) {
     write(url: url, stepName: result.stepName, fileName: "Trips", content: result.gtfs.trips)
     write(url: url, stepName: result.stepName, fileName: "Stops", content: result.gtfs.stops)
     write(url: url, stepName: result.stepName, fileName: "StopTimes", content: result.gtfs.stopTimes)
+    write(url: url, stepName: result.stepName, fileName: "Warnings", content: result.warnings)
+    write(url: url, stepName: result.stepName, fileName: "Descriptions", content: result.descriptions)
 }
 
 private func write<T: Codable>(url: URL, stepName: String, fileName: String, content: T) {
