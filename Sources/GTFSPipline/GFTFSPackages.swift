@@ -14,7 +14,7 @@ public struct GFTFSPackages: Codable {
     public var stops: [Stop]?
     public var stopTimes: [StopTime]?
     
-    init(routes: [Route]? = nil, trips: [Trip]? = nil, stops: [Stop]? = nil, stopTimes: [StopTime]? = nil) {
+    public init(routes: [Route]? = nil, trips: [Trip]? = nil, stops: [Stop]? = nil, stopTimes: [StopTime]? = nil) {
         self.routes = routes
         self.trips = trips
         self.stops = stops
