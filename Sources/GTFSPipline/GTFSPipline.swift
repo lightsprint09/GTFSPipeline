@@ -29,11 +29,11 @@ public struct StepResult: Codable {
 }
 
 public func write(_ result: StepResult, to url: URL) {
-    let stepDirectory = url.appendingPathComponent("\(stepName)")
+    let stepDirectory = url.absoluteString + "/\(result.stepName)"
     let fileManager = FileManager.default
-    if !.fileExists(atPath: dataPath.stepDirectory) {
+    if !fileManager.fileExists(atPath: stepDirectory) {
         do {
-            try fileManager.createDirectory(atPath: stepDirectory.absoluteString, withIntermediateDirectories: true, attributes: nil)
+            try fileManager.createDirectory(atPath: stepDirectory, withIntermediateDirectories: true, attributes: nil)
         } catch {
             print(error.localizedDescription);
         }
