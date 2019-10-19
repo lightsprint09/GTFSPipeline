@@ -1,9 +1,7 @@
 import Foundation
 
 public protocol Step {
-    
-    init(gtfs: GFTFSPackages)
-    
+        
     var name: String { get }
     
     var required: [FileType] { get }
