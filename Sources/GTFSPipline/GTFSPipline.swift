@@ -23,13 +23,13 @@ public struct StepResult: Codable {
     public var descriptions: [String]
 }
 
-class Pipline {
-    
-    init(steps: [Step])
-    
-    func execute(completion: @escaping (Result<[(name: String, StepResult)], Error>) -> Void) {
-        
-        
-    }
-    
-}
+//class Pipline {
+//    
+//    init(steps: [Step])
+//    
+//    func execute(completion: @escaping (Result<[(name: String, StepResult)], Error>) -> Void) {
+//        
+//        
+//    }
+//    
+//}
