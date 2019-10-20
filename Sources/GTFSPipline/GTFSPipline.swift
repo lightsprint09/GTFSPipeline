@@ -12,6 +12,12 @@ public protocol Step {
     
 }
 
+extension Step {
+    var name: String {
+        return String(describing: self)
+    }
+}
+
 public struct StepResult: Codable {
     public let stepName: String
     public let gtfs: GFTFSPackages
