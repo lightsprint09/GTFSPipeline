@@ -11,11 +11,11 @@ import Foundation
 public struct CombinedTrip {
     public var trip: Trip
     public var stops: [Stop]
-    public var times: [StopTime]
+    public var stopTimes: [StopTime]
     
-    init(trip: Trip, stopTimes: [StopTime], stops: [Stop]) {
+    public init(trip: Trip, stopTimes: [StopTime], stops: [Stop]) {
         self.trip = trip
-        self.times = stopTimes.filter { $0.tripId == trip.id }
-        self.stops = times.map { time in stops.first(where: { $0.id == time.stopId })! }
+        self.stopTimes = stopTimes.filter { $0.tripId == trip.id }
+        self.stops = stopTimes.map { time in stops.first(where: { $0.id == time.stopId })! }
     }
 }
