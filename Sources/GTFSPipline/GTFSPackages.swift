@@ -8,7 +8,7 @@
 import Foundation
 import GTFS
 
-public struct GFTFSPackages: Codable {
+public struct GTFSPackages: Codable {
     public var routes: [Route]?
     public var trips: [Trip]?
     public var stops: [Stop]?

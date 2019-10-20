@@ -20,11 +20,11 @@ extension Step {
 
 public struct StepResult: Codable {
     public let stepName: String
-    public let gtfs: GFTFSPackages
+    public let gtfs: GTFSPackages
     public let warnings: [String]
     public var descriptions: [String]
     
-    public init(stepName: String, gtfs: GFTFSPackages, warnings: [String], descriptions: [String] = []) {
+    public init(stepName: String, gtfs: GTFSPackages, warnings: [String], descriptions: [String] = []) {
         self.stepName = stepName
         self.gtfs = gtfs
         self.warnings = warnings
