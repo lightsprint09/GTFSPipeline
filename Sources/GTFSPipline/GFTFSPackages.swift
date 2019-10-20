@@ -13,12 +13,14 @@ public struct GFTFSPackages: Codable {
     public var trips: [Trip]?
     public var stops: [Stop]?
     public var stopTimes: [StopTime]?
+    public var shapes: [Shape]?
     
-    public init(routes: [Route]? = nil, trips: [Trip]? = nil, stops: [Stop]? = nil, stopTimes: [StopTime]? = nil) {
+    public init(routes: [Route]? = nil, trips: [Trip]? = nil, stops: [Stop]? = nil, stopTimes: [StopTime]? = nil, shapes: [Shape]? = nil) {
         self.routes = routes
         self.trips = trips
         self.stops = stops
         self.stopTimes = stopTimes
+        self.shapes = shapes
     }
     
     func matches(filesTypes: [FileType]) -> Bool {
@@ -32,6 +34,8 @@ public struct GFTFSPackages: Codable {
                 return matches && stops != nil
             case .stopTimes:
                 return matches && stopTimes != nil
+            case .shapes:
+                return matches && shapes != nil
             }
         })
     }
@@ -42,4 +46,5 @@ public enum FileType {
     case trips
     case stops
     case stopTimes
+    case shapes
 }
