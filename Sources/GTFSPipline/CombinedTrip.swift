@@ -18,7 +18,7 @@ public struct CombinedTrip {
         self.stopTimes = stopTimes.filter { $0.tripId == trip.id }
         self.stops = stopTimes.map { time in
             stops.first(where: { stop in
-                stop.id == time.stopId && trip.id == time.tripId
+                stop.id == time.stopId
             })!
         }
     }
