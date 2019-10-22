@@ -16,7 +16,7 @@ public struct CombinedTrip {
     public init(trip: Trip, stopTimes: [StopTime], stops: [Stop]) {
         self.trip = trip
         self.stopTimes = stopTimes.filter { $0.tripId == trip.id }
-        self.stops = stopTimes.map { time in
+        self.stops = self.stopTimes.map { time in
             stops.first(where: { stop in
                 stop.id == time.stopId
             })!
