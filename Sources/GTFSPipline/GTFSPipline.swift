@@ -12,7 +12,7 @@ public protocol Step {
     
 }
 
-extension Step {
+public extension Step {
     var name: String {
         return String(describing: self)
     }
@@ -44,6 +44,7 @@ public func write(_ result: StepResult, to url: URL) {
     write(url: url, stepName: result.stepName, fileName: "Routes", content: result.gtfs.routes)
     write(url: url, stepName: result.stepName, fileName: "Trips", content: result.gtfs.trips)
     write(url: url, stepName: result.stepName, fileName: "Stops", content: result.gtfs.stops)
+    write(url: url, stepName: result.stepName, fileName: "Shapes", content: result.gtfs.shapes)
     write(url: url, stepName: result.stepName, fileName: "StopTimes", content: result.gtfs.stopTimes)
     write(url: url, stepName: result.stepName, fileName: "Warnings", content: result.warnings)
     write(url: url, stepName: result.stepName, fileName: "Descriptions", content: result.descriptions)
